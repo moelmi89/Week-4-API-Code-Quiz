@@ -1,18 +1,48 @@
 var startQuiz = document.getElementById("startQuiz");
 var currentScore = document.getElementById("currentScore");
+var viewScores = document.getElementById("viewScores");
+var finalScore = document.getElementById("finalScore");
+var results = document.getElementById("results");
+var playAgain = document.getElementById("play-again");
+
+var welcome = document.getElementById("welcome");
 var question = document.getElementById("question");
 var option = document.getElementById("option");
 var message = document.getElementById("message");
 
-var results = document.getElementById("results");
-var viewScores = document.getElementById("viewScores");
 var submit = document.getElementById("submit");
-var welcome = document.getElementById("welcome");
+
 var initials = document.getElementById("initials");
-var finalScore = document.getElementById("finalScore");
-var playAgain = document.getElementById("play-again");
 
 var highScores = document.getElementById("highScores");
 var highScoreList = document.getElementById("highScoreList");
 
 var timer = document.getElementById("timer");
+
+
+
+var secondsLeft = 0;
+var score = 0;
+var currentQuestion = 0;
+var countdownTimer;
+
+
+
+function stopGame() {
+
+    clearInterval(countdownTimer);
+
+    timer.textContent = ""
+
+    welcome.style.display = 'none';
+    quiz.style.display = 'none';
+    results.style.display = 'flex';
+
+    finalScore.textContent = "You Scored: " + currentScore;
+}
+
+
+startQuiz.addEventListener("click", startGame);
+highScores.addEventListener("click", getHighScores);
+submit.addEventListener("click", saveScore);
+playAgain.addEventListener("click", startGame)
