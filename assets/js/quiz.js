@@ -44,6 +44,27 @@ function stopGame() {
     finalScore.textContent = "You Scored: " + currentScore;
 }
 
+function startGame() {
+
+	welcome.style.display = 'none';
+	results.style.display = 'none';
+	highScores.style.display = 'none';
+
+	quiz.style.display = 'block';
+
+	countdownTimer = setInterval(() => {
+		timer.textContent = "Times:" + secondsLeft;
+		secondsLeft--;
+
+
+		if (secondsLeft <= 0) {
+			stopGame();
+		}
+	}, 1000);
+
+	showQuiz();
+}
+
 
 startQuiz.addEventListener("click", startGame);
 highScores.addEventListener("click", getHighScores);
