@@ -41,3 +41,11 @@ html,body{
   color: hsl(206, 17%, 28%);
 }
 
+.card-body {
+  min-height: 100px;
+}
+
+.card-footer {
+  text-align: center;
+}
+
