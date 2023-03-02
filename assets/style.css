@@ -1,16 +1,43 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: black;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
   body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: hsl(0, 18%, 72%);
   }
+
+  header{
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
+  }
+  
+  #viewScores{
+    color: #020202;
+  }
+  
+  #timer{
+    float: right;
+  }
+
+  #welcome {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card h1,.card p {
+  text-align: center;
+  padding: 0 20px 20px;
+  color: hsl(206, 17%, 28%);
+}
 
