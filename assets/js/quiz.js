@@ -32,12 +32,14 @@ var countdownTimer;
 function stopGame() {
 
     clearInterval(countdownTimer);
+    secondsLeft = 75;
+	currentQuestion = 0;
 
     timer.textContent = ""
 
-    welcome.style.display = 'none';
-    quiz.style.display = 'none';
-    results.style.display = 'flex';
+	welcome.style.display = 'none';
+	question.textContent = "All Done!"
+	results.style.display = 'block';
 
     finalScore.textContent = "You Scored: " + currentScore;
 }
