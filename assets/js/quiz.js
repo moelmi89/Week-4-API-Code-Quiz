@@ -6,6 +6,7 @@ var results = document.getElementById("results");
 var playAgain = document.getElementById("play-again");
 
 var welcome = document.getElementById("welcome");
+var quiz = document.getElementById("quiz")
 var question = document.getElementById("question");
 var option = document.getElementById("option");
 var message = document.getElementById("message");
@@ -16,9 +17,9 @@ var initials = document.getElementById("initials");
 
 var highScores = document.getElementById("highScores");
 var highScoreList = document.getElementById("highScoreList");
+var clear = document.getElementById("clear");
 
 var timer = document.getElementById("timer");
-
 
 
 var secondsLeft = 0;
