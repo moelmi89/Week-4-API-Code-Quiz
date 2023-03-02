@@ -65,8 +65,14 @@ function startGame() {
 	showQuiz();
 }
 
+function showQuiz() {
+	if (currentQuestion >= questions.length) {
+		stopGame()
+		return;
+	}}
+
 
 startQuiz.addEventListener("click", startGame);
-highScores.addEventListener("click", getHighScores);
 submit.addEventListener("click", saveScore);
-playAgain.addEventListener("click", startGame)
+playAgain.addEventListener("click", startGame);
+viewScores.addEventListener('click', getHighScores);
