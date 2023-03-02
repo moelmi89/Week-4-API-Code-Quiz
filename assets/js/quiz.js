@@ -71,6 +71,23 @@ function showQuiz() {
 		return;
 	}}
 
+function getHighScores() {
+        welcome.style.display = 'none';
+        quiz.style.display = 'none';
+    
+        highScores.style.display = 'initial';
+    }
+
+function saveScore() {
+        score = {
+            initial: initials.value,
+            score: currentScore
+        };
+    
+        scores.push(score);
+        getHighScores();
+    }
+
 
 startQuiz.addEventListener("click", startGame);
 submit.addEventListener("click", saveScore);
