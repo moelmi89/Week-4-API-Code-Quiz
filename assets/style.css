@@ -10,29 +10,42 @@ html,body{
   padding: 0;
 }
 
-  body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: hsl(0, 18%, 72%);
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: hsl(0, 18%, 72%);
   }
 
-  header{
-    display: block;
-    width: 100%;
-    padding: 20px 30px;
+header{
+  display: block;
+  width: 100%;
+  padding: 20px 30px;
   }
   
-  #viewScores{
-    color: #020202;
+#viewScores{
+   color: #020202;
   }
   
-  #timer{
-    float: right;
+#timer{
+  float: right;
   }
 
-  #welcome {
+#welcome,#quiz,#highScores {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+#quiz, #results,#highScores{
+  display: none;
+}
+
+#question{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#initials{
+  min-height: 40px;
 }
 
 .card h1,.card p {
@@ -41,11 +54,69 @@ html,body{
   color: hsl(206, 17%, 28%);
 }
 
+.card {
+  border-radius: 5px;
+  border-width: 1px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 40px;
+}
+
 .card-body {
   min-height: 100px;
 }
 
 .card-footer {
   text-align: center;
+}
+
+#message::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
+}
+
+.card-footer::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.btn {
+  border: none;
+  background-color: hsl(260, 15%, 88%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 6px 0 , rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+  color:black;
+  display: inline-block;
+  font-size: 15px;
+  margin: auto;
+  padding: 10px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.opt{
+  display: block;
+  min-width: 300px;
+}
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0 0 0;
+    padding: 10px 15px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 0.8rem;
+  }
 }
 

@@ -22,7 +22,7 @@ var clear = document.getElementById("clear");
 var timer = document.getElementById("timer");
 
 
-var secondsLeft = 0;
+var secondsLeft = 75;
 var score = 0;
 var currentQuestion = 0;
 var countdownTimer;
@@ -69,13 +69,61 @@ function showQuiz() {
 	if (currentQuestion >= questions.length) {
 		stopGame()
 		return;
-	}}
+	}
+
+	const q = questions[currentQuestion];
+	question.textContent = q.title;
+
+	for (let i = 0; i < q.choices.length; i++) {
+		const x = document.createElement("BUTTON");
+		x.classList.add("btn");
+		x.classList.add("opt");
+		x.textContent = q.choices[i];
+		x.addEventListener('click', ev => {
+
+			message.style.display = "initial";
+
+			if (ev.target.textContent === q.answer) {
+				message.textContent = "Correct!";
+			} else {
+				secondsLeft -= 15;
+				message.textContent = "Wrong!";
+			}
+
+			currentScore = secondsLeft;
+
+			while (option.firstChild) {
+				option.removeChild(option.firstChild);
+			}
+			currentQuestion++;
+			showQuiz();
+		})
+		option.appendChild(x);
+	}
+}
 
 function getHighScores() {
         welcome.style.display = 'none';
         quiz.style.display = 'none';
     
         highScores.style.display = 'initial';
+
+		while (option.firstChild) {
+			option.removeChild(option.firstChild);
+		}
+	
+		while (highScoreList.firstChild) {
+			highScoreList.removeChild(highScoreList.firstChild);
+		}
+	
+		for (let i = 0; i < scores.length; i++) {
+			const x = document.createElement("DIV");
+			x.style.backgroundColor = "Purple";
+			x.style.color='White';
+			x.style.padding="20px"
+			x.textContent = scores[i].initial + " - " + scores[i].score;
+			highScoreList.append(x);
+		}
     }
 
 function saveScore() {
